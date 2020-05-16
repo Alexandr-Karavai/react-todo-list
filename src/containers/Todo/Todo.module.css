@@ -1,0 +1,22 @@
+.Todo {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    background: #ff9068;
+    background: linear-gradient(45deg, #fd746c , #ff9068);
+/*//background: linear-gradient(90deg, #5041b2 0%, #7969e6 100%);*/
+}
+
+.Todo h1 {
+    color: #34495e;
+    margin-left: 10px;
+}
+
+.TodoWrapper {
+    box-shadow: #34495e;
+    margin: 0 10px;
+    box-sizing: border-box;
+    width: 600px;
+    background: #bbbbbb;
+}

@@ -1,0 +1,47 @@
+/* Style the header */
+.TodoHeader form{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbbbbb;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+/* Clear floats after the header */
+.TodoHeader form:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the input */
+.TodoHeader form input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+/* Style the "Add" button */
+.AddBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    border: none;
+}
+
+.AddBtn:hover {
+    background-color: #888888;
+}
