@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TodoHeader from "../../components/TodoHeader/TodoHeader";
 import TodoList from "../../components/TodoList/TodoList";
+import TodoSearch from "../../components/TodoSearch/TodoSearch";
 import classes from './Todo.module.css'
 
 class Todo extends Component {
@@ -10,7 +11,8 @@ class Todo extends Component {
             {id: 112, title: 'Learn React', important: true, done: false},
             {id: 134, title: 'Learn Node', important: false, done: true},
             {id: 152, title: 'Learn MongoDB', important: false, done: false}
-        ]
+        ],
+        mode: 'all'
     };
 
     handleDone = id => {
@@ -61,14 +63,20 @@ class Todo extends Component {
         });
     };
 
+    handleDisplay = modeDisplay => {
+        this.setState({mode: modeDisplay})
+    }
+
     render() {
         return (
             <React.Fragment>
                 <div className={classes.Todo}>
                     <div className={classes.TodoWrapper}>
                         <TodoHeader addNewTodoItem={this.addNewTodoItem}/>
+                        <TodoSearch handleDisplay={this.handleDisplay} mode={this.state.mode}/>
                         <TodoList
                             items={this.state.items}
+                            mode={this.state.mode}
                             handelDone={this.handleDone}
                             handleImportant={this.handleImportant}
                             removeTodoItem={this.removeTodoItem}/>

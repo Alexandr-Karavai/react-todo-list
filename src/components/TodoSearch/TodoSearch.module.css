@@ -1,0 +1,40 @@
+.TodoSearch {
+    box-sizing: border-box;
+    padding: 20px;
+    background: #888888;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.TodoSearch input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 45%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.ControlBtn {
+    padding: 10px;
+    /*width: 40px;*/
+    background: #d9d9d9;
+    border: none;
+    margin: 0 5px;
+
+    width: 15%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+
+.ControlBtn:first-child {
+    margin-left: 10px;
+}
+
+.Active {
+    background: steelblue;
+}

@@ -6,7 +6,9 @@ const TodoHeader = props =>{
 
     const onSubmit = e => {
         e.preventDefault();
-        props.addNewTodoItem(todos)
+        if (todos.trim().length > 0) {
+            props.addNewTodoItem(todos)
+        }
         setTodos('')
     };
 
