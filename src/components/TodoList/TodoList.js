@@ -2,11 +2,11 @@ import React from 'react';
 import TodoListItem from "./TodoListItem/TodoListItem";
 import classes from './TodoList.module.css'
 
-const TodoList = ({items, handelDone, removeTodoItem, handleImportant, mode}) => {
+const TodoList = ({handelDone, removeTodoItem, handleImportant, mode, searchItems}) => {
     let listItem;
     const displayListItem = (mode) => {
-
-        listItem = items.map(task => <TodoListItem
+        const newItems = searchItems();
+        listItem = newItems.map(task => <TodoListItem
             key={task.id}
             id={task.id}
             title={task.title}

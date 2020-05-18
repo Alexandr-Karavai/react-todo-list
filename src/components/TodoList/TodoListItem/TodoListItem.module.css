@@ -2,7 +2,7 @@
 .TodoListItem {
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 40px;
+    padding: 12px 30px 12px 70px;
     background: #eee;
     font-size: 18px;
     transition: 0.2s;
@@ -44,7 +44,7 @@
     border-style: solid;
     border-width: 0 2px 2px 0;
     top: 16px;
-    left: 16px;
+    left: 40px;
     transform: rotate(45deg);
     height: 15px;
     width: 7px;

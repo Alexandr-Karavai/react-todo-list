@@ -12,6 +12,7 @@ class Todo extends Component {
             {id: 134, title: 'Learn Node', important: false, done: true},
             {id: 152, title: 'Learn MongoDB', important: false, done: false}
         ],
+        searchValue: '',
         mode: 'all'
     };
 
@@ -65,7 +66,17 @@ class Todo extends Component {
 
     handleDisplay = modeDisplay => {
         this.setState({mode: modeDisplay})
-    }
+    };
+
+    setSearchValue = e => {
+        const value = e.target.value.toLowerCase();
+        this.setState({searchValue: value});
+    };
+
+    searchItems = e => {
+        const search = this.state.items.filter(item => item.title.toLowerCase().includes(this.state.searchValue));
+        return search;
+    };
 
     render() {
         return (
@@ -73,13 +84,16 @@ class Todo extends Component {
                 <div className={classes.Todo}>
                     <div className={classes.TodoWrapper}>
                         <TodoHeader addNewTodoItem={this.addNewTodoItem}/>
-                        <TodoSearch handleDisplay={this.handleDisplay} mode={this.state.mode}/>
+                        <TodoSearch handleDisplay={this.handleDisplay}
+                                    mode={this.state.mode}
+                                    setSearchValue={this.setSearchValue}/>
                         <TodoList
                             items={this.state.items}
                             mode={this.state.mode}
                             handelDone={this.handleDone}
                             handleImportant={this.handleImportant}
-                            removeTodoItem={this.removeTodoItem}/>
+                            removeTodoItem={this.removeTodoItem}
+                            searchItems={this.searchItems}/>
                     </div>
                 </div>
             </React.Fragment>

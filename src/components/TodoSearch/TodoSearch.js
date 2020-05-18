@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './TodoSearch.module.css'
 
 const TodoSearch = (props) => {
-    let allBtn = [classes.ControlBtn], activeBtn = [classes.ControlBtn], doneBtn = [classes.ControlBtn];
+    const allBtn = [classes.ControlBtn], activeBtn = [classes.ControlBtn], doneBtn = [classes.ControlBtn];
     if (props.mode === 'all') {
         allBtn.push(classes.Active)
     }
@@ -15,7 +15,9 @@ const TodoSearch = (props) => {
 
     return (
         <div className={classes.TodoSearch}>
-            <input placeholder={'Type to search'} type="text"/>
+            <input placeholder={'Type to search'}
+                   type="text"
+                   onChange={props.setSearchValue}/>
             <div>
                 <button
                     className={allBtn.join(' ')}
